@@ -4,11 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjectTimeTrackerWPF.Views"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="250" d:DesignWidth="200"
       Title="StatisitcsPanel">
 
-    <DockPanel Background="White">
-        
-    </DockPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <lvc:PieChart Name="Chart" Grid.Row="1" Series="{Binding SeriesCollection}" 
+                      LegendLocation="Bottom" InnerRadius="60">
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="10"></lvc:DefaultLegend>
+            </lvc:PieChart.ChartLegend>
+            <lvc:PieChart.DataTooltip>
+                <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+            </lvc:PieChart.DataTooltip>
+        </lvc:PieChart>
+    </Grid>
 </Page>
