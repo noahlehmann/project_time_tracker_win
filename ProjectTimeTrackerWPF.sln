@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project_time_tracker_win", "project_time_tracker_win.csproj", "{9A9D4D37-284D-4296-A8BA-C92275CED111}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTimeTrackerWPF", "ProjectTimeTrackerWPF.csproj", "{9A9D4D37-284D-4296-A8BA-C92275CED111}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
