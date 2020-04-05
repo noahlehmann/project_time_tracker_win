@@ -1,4 +1,5 @@
 ﻿using ProjectTimeTrackerWPF.ViewModels;
+using ProjectTimeTrackerWPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace project_time_tracker_win
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+            ContentFrame.Navigate(new MainContent());
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

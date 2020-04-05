@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ProjectTimeTrackerWPF.Views
 {
     /// <summary>
-    /// Interaktionslogik für StatisitcsPanel.xaml
+    /// Interaktionslogik für Options.xaml
     /// </summary>
-    public partial class StatisitcsPanel : Page
+    public partial class Options : Page
     {
-        public StatisitcsPanel()
+        public Options()
         {
             InitializeComponent();
         }

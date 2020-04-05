@@ -16,13 +16,15 @@ using System.Windows.Shapes;
 namespace ProjectTimeTrackerWPF.Views
 {
     /// <summary>
-    /// Interaktionslogik für TimerPage.xaml
+    /// Interaktionslogik für MainContent.xaml
     /// </summary>
-    public partial class TimerPage : Page
+    public partial class MainContent : Page
     {
-        public TimerPage()
+        public MainContent()
         {
             InitializeComponent();
+            LeftMainFrame.Navigate(new TimerPage());
+            RightMainFrame.Navigate(new StatisticsPage());
         }
     }
 }

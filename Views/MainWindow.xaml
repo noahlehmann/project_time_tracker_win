@@ -6,8 +6,26 @@
         xmlns:local="clr-namespace:project_time_tracker_win"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Project Time Tracker" Height="300" Width="600">
-    <DockPanel>
-        <TextBlock Text="{Binding User}" />
-    </DockPanel>
+        Title="Project Time Tracker" Height="300" Width="600" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Run Text="Willkommen zurück, "/><Run Text="{Binding User, Mode=OneWay}"/><Run Text="!"/>
+            </TextBlock>
+            <Button 
+                x:Name="BtnExit"
+                Height="20"
+                Width="20"
+                HorizontalAlignment="Right"
+                Margin="4"
+                Click="BtnExit_Click"/>
+        </Grid>
+        <Frame 
+            Name="ContentFrame"
+            Grid.Row="1" />
+    </Grid>
 </Window>
