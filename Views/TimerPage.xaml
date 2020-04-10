@@ -24,26 +24,33 @@
             </Grid.RowDefinitions>
             <ComboBox Grid.Row="0"
                 materialDesign:HintAssist.Hint="-- Projekt wählen --"
-                x:Name="ProjectsComboBox" Margin="20"
+                x:Name="ProjectsComboBox" 
+                Margin="20"
                 ItemsSource="{Binding Projects}"
-                ItemTemplate="{StaticResource ProjectComboboxItemTemplate}" SelectionChanged="ProjectsComboBox_SelectionChanged"/>
+                ItemTemplate="{StaticResource ProjectComboboxItemTemplate}"
+                IsEnabled="{Binding IsProjectSelectionAllowed, Mode=OneWay}" 
+                SelectedItem="{Binding SelectedProject, Mode=OneWayToSource}"/>
             <TextBlock Grid.Row="1"
-                HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48">
-                88:88
-            </TextBlock>
+                HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Text="{Binding DisplayTime, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button 
+                    x:Name="StartButton"
                     Grid.Column="0"
                     HorizontalAlignment="Center"
-                    Content="Start"/>
+                    Content="Start" 
+                    Click="StartButton_Click"
+                    IsEnabled="{Binding IsStartTimerAllowed, Mode=OneWay}"/>
                 <Button 
+                    x:Name="StopButton"
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="Stop"/>
+                    Content="Stop" 
+                    Click="StopButton_Click"
+                    IsEnabled="{Binding IsStopTimerAllowed, Mode=OneWay}"/>
             </Grid>
         </Grid>
     </DockPanel>

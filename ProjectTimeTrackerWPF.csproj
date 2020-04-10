@@ -156,6 +156,8 @@
     <Compile Include="Models\ProjectTimeDbContext.cs" />
     <Compile Include="Models\Time\ProjectTime.cs" />
     <Compile Include="Models\Time\WorkDay.cs" />
+    <Compile Include="Service\MockData\MockProjects.cs" />
+    <Compile Include="Service\MockData\MockWorkDays.cs" />
     <Compile Include="Service\ProjectInfoDataService.cs" />
     <Compile Include="Service\TimerDataService.cs" />
     <Compile Include="ViewModels\TimerPageViewModel.cs" />

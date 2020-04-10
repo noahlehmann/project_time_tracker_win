@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ProjectTimeTrackerWPF.Views
 {
@@ -21,11 +22,37 @@ namespace ProjectTimeTrackerWPF.Views
     /// </summary>
     public partial class TimerPage : Page
     {
+        #region constructor
+
+        /// <summary>
+        /// Basic Constructor
+        /// </summary>
         public TimerPage()
         {
             InitializeComponent();
             DataContext = new TimerPageViewModel();
         }
+
+        #endregion constructor
+        //#############################################################################
+        #region timer buttons
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((TimerPageViewModel)DataContext).StartTimer();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((TimerPageViewModel)DataContext).StopTimer();
+        }
+
+        private void ResetTimerDispatcher()
+        {
+            ((TimerPageViewModel)DataContext).ResetTimer();
+        }
+
+        #endregion timer buttons
 
     }
 }
