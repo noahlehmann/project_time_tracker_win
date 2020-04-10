@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTimeTrackerWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace ProjectTimeTrackerWPF.Views
         public TimerPage()
         {
             InitializeComponent();
+            DataContext = new TimerPageViewModel();
         }
+
     }
 }

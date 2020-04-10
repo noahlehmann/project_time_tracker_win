@@ -1,31 +1,18 @@
 ﻿using ProjectTimeTrackerWPF.Models.Projects;
+using ProjectTimeTrackerWPF.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectTimeTrackerWPF.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    class TimerPageViewModel : ViewModelBase
     {
-        #region PrivateMembers
 
         private ObservableCollection<Project> _projects;
-
-        #endregion PrivateMembers
-        #region Properties
-
-        public string User { get; }
-
-        #endregion Properties
-
-        public MainWindowViewModel()
-        {
-            User = Environment.UserName;
-        }
 
         public ObservableCollection<Project> Projects
         {
@@ -33,5 +20,15 @@ namespace ProjectTimeTrackerWPF.ViewModels
             set => Set(ref _projects, value);
         }
 
+        public TimerPageViewModel()
+        {
+            Task.Run(() => LoadProjects());
+        }
+
+        private async void LoadProjects()
+        {
+            List<Project> projects = await ProjectInfoDataService.LoadProjectsAsync();
+            Projects = new ObservableCollection<Project>(projects);
+        }
     }
 }

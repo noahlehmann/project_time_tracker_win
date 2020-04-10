@@ -1,6 +1,7 @@
 ﻿using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using ProjectTimeTrackerWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,40 +27,11 @@ namespace ProjectTimeTrackerWPF.Views
         public StatisticsPage()
         {
             InitializeComponent();
-
-            SeriesCollection = new SeriesCollection
-            {
-                new PieSeries
-                {
-                    Title = "Chrome",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(8) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = "Mozilla",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(6) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = "Opera",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(10) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = "Explorer",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(4) },
-                    DataLabels = true
-                }
-            };
-
-            DataContext = this;
+            DataContext = new StatisticsPageViewModel();
 
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
+       
        
     }
 }

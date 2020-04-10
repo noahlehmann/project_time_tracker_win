@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTimeTrackerWPF.Models.Time
 {
-    class WorkDay
+    public class WorkDay
     {
         /// <summary>
         /// Database IDentifier
@@ -18,12 +18,12 @@ namespace ProjectTimeTrackerWPF.Models.Time
         /// <summary>
         /// Start of working day
         /// </summary>
-        private DateTime Start { get; set; }
+        public DateTime Start { get; set; }
         
         /// <summary>
         /// End of working day
         /// </summary>
-        private DateTime End { get; set; }
+        public DateTime End { get; set; }
 
         /// <summary>
         /// Working intervals of projects

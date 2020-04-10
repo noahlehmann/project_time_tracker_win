@@ -156,8 +156,12 @@
     <Compile Include="Models\ProjectTimeDbContext.cs" />
     <Compile Include="Models\Time\ProjectTime.cs" />
     <Compile Include="Models\Time\WorkDay.cs" />
-    <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Service\ProjectInfoDataService.cs" />
+    <Compile Include="Service\TimerDataService.cs" />
+    <Compile Include="ViewModels\TimerPageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\StatisticsPageViewModel.cs" />
     <Compile Include="Views\MainContent.xaml.cs">
       <DependentUpon>MainContent.xaml</DependentUpon>
     </Compile>
