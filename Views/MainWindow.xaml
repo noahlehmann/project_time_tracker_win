@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:project_time_tracker_win"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Project Time Tracker" Height="300" Width="600" WindowStyle="None">
+        Title="Project Time Tracker" Height="300" Width="600" WindowStartupLocation="Manual">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

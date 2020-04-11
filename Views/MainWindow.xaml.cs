@@ -25,8 +25,12 @@ namespace project_time_tracker_win
         public MainWindow()
         {
             InitializeComponent();
+            // Top = SystemParameters.PrimaryScreenHeight - Height - 50;
+            // Left = SystemParameters.PrimaryScreenWidth - Width - 50;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             DataContext = new MainWindowViewModel();
             ContentFrame.Navigate(new MainContent());
+            Console.WriteLine(System.Windows.SystemParameters.PrimaryScreenWidth);
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)

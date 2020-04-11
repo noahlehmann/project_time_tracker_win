@@ -27,11 +27,9 @@ namespace ProjectTimeTrackerWPF.Views
         public StatisticsPage()
         {
             InitializeComponent();
-            DataContext = new StatisticsPageViewModel();
+            DataContext = new StatisticsPageViewModel(this.Dispatcher);
 
         }
 
-       
-       
     }
 }

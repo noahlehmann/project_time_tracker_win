@@ -14,13 +14,30 @@
             <lvc:PieChart 
                 Name="Chart" 
                 Margin="20"
-                Series="{Binding SeriesCollection}" 
+                Series="{Binding SeriesCollection}"
                 InnerRadius="50">
                 <lvc:PieChart.DataTooltip>
                     <lvc:DefaultTooltip BulletSize="20"/>
                 </lvc:PieChart.DataTooltip>
             </lvc:PieChart>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">88:88</TextBlock>
+            <TextBlock 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                FontSize="12" 
+                Margin="0,0,0,45"
+                Text="Today:"/>
+            <TextBlock 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                FontSize="24" >
+                <Run Text="{Binding TotalHours}"/><Run Text="h"/>
+            </TextBlock>
+            <TextBlock 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                FontSize="10" 
+                Margin="0,45,0,0"
+                Text="Well done!"/>
         </Grid>
     </DockPanel>
 </Page>
