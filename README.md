@@ -2,7 +2,7 @@
 
 ## Setup
 
-#### 1. Open Nuget Paket Manager and install following packages
+1. #### Open Nuget Paket Manager and install following packages
    
    1.1 **LiveCharts.WPF** (min. version 0.9.7) and dependencies
    
@@ -14,23 +14,23 @@
 
    **Note**: Dependencies should install automatically
 
-#### 2. Open Paket-Manager-Console
+2. #### Open Paket-Manager-Console
 
    2.1 Issue Command (Once per project setup)
 	
    ````Script 
-	Enable-Migrations
-	````
+   Enable-Migrations
+   ````
    
    2.2 Issue Command (Once per change in Data Model)
 
    ````Script
-	Add-Migration '[Name]'
-	````
+   Add-Migration '[Name]'
+   ````
    
    2.3 Issue Command (To run a migration)
 	
    ````Script
-	Update-Database
-	````
+   Update-Database
+   ````
 
