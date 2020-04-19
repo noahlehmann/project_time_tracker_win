@@ -13,9 +13,7 @@ namespace ProjectTimeTrackerWPF.ViewModels
     class TimerPageViewModel : ViewModelBase
     {
 
-        #region private members
-
-        private readonly int MINUTE = 60, HOUR = 3600;
+        #region private members       
         
         private ObservableCollection<Project> _projects;
         private string _displayTime = "0s";

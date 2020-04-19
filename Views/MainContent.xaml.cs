@@ -20,11 +20,32 @@ namespace ProjectTimeTrackerWPF.Views
     /// </summary>
     public partial class MainContent : Page
     {
+
+        private TimerPage _timerPage;
+
         public MainContent()
         {
             InitializeComponent();
-            LeftMainFrame.Navigate(new TimerPage());
+            _timerPage = new TimerPage(this);
+            LeftMainFrame.Navigate(_timerPage);
             RightMainFrame.Navigate(new StatisticsPage());
+        }
+
+        public void OpenCreateProject()
+        {
+            LeftMainFrame.Navigate(new CreateProject(this));
+        }
+
+        public void NavigateToTimerPage()
+        {
+            if (LeftMainFrame.CanGoBack)
+            {
+                LeftMainFrame.GoBack();
+            }
+            else
+            {
+                LeftMainFrame.Navigate(_timerPage);
+            }
         }
     }
 }

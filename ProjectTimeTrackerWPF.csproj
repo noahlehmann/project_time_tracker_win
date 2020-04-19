@@ -147,11 +147,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Projects\ProjectProperty.cs" />
     <Compile Include="Models\Projects\Break.cs" />
-    <Compile Include="Models\Projects\BusinessProject.cs" />
-    <Compile Include="Models\Projects\ClientProject.cs" />
-    <Compile Include="Models\Projects\InternalProject.cs" />
-    <Compile Include="Models\Projects\PersonalOrganization.cs" />
     <Compile Include="Models\Projects\Project.cs" />
     <Compile Include="Models\ProjectTimeDbContext.cs" />
     <Compile Include="Models\Time\ProjectTime.cs" />
@@ -160,10 +157,15 @@
     <Compile Include="Service\MockData\MockWorkDays.cs" />
     <Compile Include="Service\ProjectInfoDataService.cs" />
     <Compile Include="Service\TimerDataService.cs" />
+    <Compile Include="ViewModels\CreateProjectViewModel.cs" />
     <Compile Include="ViewModels\TimerPageViewModel.cs" />
+    <Compile Include="ViewModels\Validation\NotEmptyValidationRule.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\StatisticsPageViewModel.cs" />
+    <Compile Include="Views\CreateProject.xaml.cs">
+      <DependentUpon>CreateProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainContent.xaml.cs">
       <DependentUpon>MainContent.xaml</DependentUpon>
     </Compile>
@@ -176,6 +178,10 @@
     <Compile Include="Views\TimerPage.xaml.cs">
       <DependentUpon>TimerPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\CreateProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

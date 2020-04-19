@@ -30,12 +30,29 @@ namespace project_time_tracker_win
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             DataContext = new MainWindowViewModel();
             ContentFrame.Navigate(new MainContent());
-            Console.WriteLine(System.Windows.SystemParameters.PrimaryScreenWidth);
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void OptionsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new Options(this));
+        }
+
+        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if(ContentFrame.Content is Options)
+            {
+                OptionsBtn.Visibility = Visibility.Hidden;
+            }
+            else if (ContentFrame.Content is MainContent)
+            {
+                OptionsBtn.Visibility = Visibility.Visible;
+            }
+
         }
     }
 }

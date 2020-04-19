@@ -10,7 +10,7 @@ namespace ProjectTimeTrackerWPF.Models.Projects
     /// <summary>
     /// Abstract class for storing Project based information
     /// </summary>
-    public abstract class Project
+    public class Project
     {
         /// <summary>
         /// Database Identifier
@@ -27,6 +27,11 @@ namespace ProjectTimeTrackerWPF.Models.Projects
         /// Quick description of project purpose
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Generic Container for more information
+        /// </summary>
+        public ICollection<ProjectProperty> Properties { get; set; }
 
     }
 }

@@ -15,7 +15,7 @@ namespace ProjectTimeTrackerWPF.Service.MockData
             {
                 return new List<Project>()
                 {
-                    new PersonalOrganization()
+                    new Project()
                     {
                         Description = "Time spent on organizational tasks",
                         ProjectName = "Organizational",
@@ -27,22 +27,28 @@ namespace ProjectTimeTrackerWPF.Service.MockData
                         ProjectName = "Break",
                         Id = 2
                     },
-                    new ClientProject()
+                    new Project()
                     {
                         Description = "Project Financial analysis for client XYZ",
                         ProjectName = "Financial XYZ",
-                        Client = "XYZ",
-                        Supervisor = "Mr. Supervisor",
-                        ChargeCode = "12345678",
+                        Properties = new List<ProjectProperty>()
+                        {
+                            new ProjectProperty(){Key = "Client", Value = "XYZ"},
+                            new ProjectProperty(){Key = "Supervisor", Value = "Mr. Supervisor"},
+                            new ProjectProperty(){Key = "ChargeCode", Value = "12345678"},
+                        },
                         Id = 3
                     },
-                    new InternalProject()
+                    new Project()
                     {
                         Description = "Internal Business Creation",
                         ProjectName = "Internal Project",
-                        OrganizationalStructure = "Financing",
-                        ChargeCode = "87654321",
-                        Supervisor = "Mr. Internal-Supervisor",
+                        Properties = new List<ProjectProperty>()
+                        {
+                            new ProjectProperty(){Key = "OrganizationalStructure", Value = "Financing"},
+                            new ProjectProperty(){Key = "Supervisor", Value = "Mr. Internal-Supervisor"},
+                            new ProjectProperty(){Key = "ChargeCode", Value = "87654321"},
+                        },
                         Id = 4
                     }
                 };

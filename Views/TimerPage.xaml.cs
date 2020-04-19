@@ -22,20 +22,27 @@ namespace ProjectTimeTrackerWPF.Views
     /// </summary>
     public partial class TimerPage : Page
     {
+        #region private members
+
+        private MainContent _parent;
+
+        #endregion private members
+        //#############################################################################
         #region constructor
 
         /// <summary>
         /// Basic Constructor
         /// </summary>
-        public TimerPage()
+        public TimerPage(MainContent parent)
         {
             InitializeComponent();
             DataContext = new TimerPageViewModel();
+            _parent = parent;
         }
 
         #endregion constructor
         //#############################################################################
-        #region timer buttons
+        #region event handler
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
@@ -47,12 +54,20 @@ namespace ProjectTimeTrackerWPF.Views
             ((TimerPageViewModel)DataContext).StopTimer();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _parent.OpenCreateProject();
+        }
+
+        #endregion event handler
+        //#############################################################################
+        #region private methods
+
         private void ResetTimerDispatcher()
         {
             ((TimerPageViewModel)DataContext).ResetTimer();
         }
 
-        #endregion timer buttons
-
+        #endregion private methods
     }
 }

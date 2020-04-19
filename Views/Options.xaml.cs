@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project_time_tracker_win;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,28 @@ namespace ProjectTimeTrackerWPF.Views
     /// </summary>
     public partial class Options : Page
     {
-        public Options()
+
+        private MainWindow _parent;
+
+        public Options(MainWindow parent)
         {
             InitializeComponent();
+            _parent = parent;
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ExitOptions();
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ExitOptions();
+        }
+
+        private void ExitOptions()
+        {
+            _parent.ContentFrame.GoBack();
         }
     }
 }

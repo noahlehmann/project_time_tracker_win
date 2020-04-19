@@ -11,29 +11,10 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>        
         <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button 
-                Grid.Column="0"
-                x:Name="BtnExitOptions"
-                Margin="8"
-                Padding="8"
-                Style="{StaticResource MaterialDesignFloatingActionButton}"
-                ToolTip="Exit Options">
-                <materialDesign:PackIcon
-                                    Width="30"
-                                    Height="30"
-                                    Kind="ArrowBack" />
-            </Button>
-            <TextBlock Grid.Column="1" Text="Options"/>
-        </Grid>
-        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -48,10 +29,30 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                
-                
+                </Grid.ColumnDefinitions>                
             </Grid>
+        </Grid>
+        <Grid Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                x:Name="CancelBtn"
+                Margin="5"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                ToolTip="MaterialDesignFlatButton" Click="CancelBtn_Click">
+                CANCEL
+            </Button>
+            <Button
+                Grid.Column="1"
+                x:Name="SaveBtn"
+                Margin="5"
+                Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                ToolTip="MaterialDesignFlatLightButton" Click="SaveBtn_Click">
+                Save
+            </Button>
         </Grid>
     </Grid>
 </Page>

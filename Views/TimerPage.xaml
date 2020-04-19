@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ProjectTimeTrackerWPF.Views"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="250" d:DesignWidth="300"
+      d:DesignHeight="250" d:DesignWidth="250"
       Title="TimerPanel">
 
     <Page.Resources>
@@ -15,44 +15,54 @@
         </DataTemplate>    
     </Page.Resources>
     
-    <DockPanel Background="White">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <ComboBox Grid.Row="0"
-                materialDesign:HintAssist.Hint="-- Projekt wählen --"
-                x:Name="ProjectsComboBox" 
-                Margin="20"
-                ItemsSource="{Binding Projects}"
-                ItemTemplate="{StaticResource ProjectComboboxItemTemplate}"
-                IsEnabled="{Binding IsProjectSelectionAllowed, Mode=OneWay}" 
-                SelectedItem="{Binding SelectedProject, Mode=OneWayToSource}"/>
-            <TextBlock Grid.Row="1"
-                HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Text="{Binding DisplayTime, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+    <DockPanel>
+        <materialDesign:Card
+            Margin="10"
+            Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ComboBox Grid.Row="0"
+                        materialDesign:HintAssist.Hint="-- Projekt wählen --"
+                        x:Name="ProjectsComboBox" 
+                        ItemsSource="{Binding Projects}"
+                        ItemTemplate="{StaticResource ProjectComboboxItemTemplate}"
+                        IsEnabled="{Binding IsProjectSelectionAllowed, Mode=OneWay}" 
+                        SelectedItem="{Binding SelectedProject, Mode=OneWayToSource}"/>
                 <Button 
-                    x:Name="StartButton"
-                    Grid.Column="0"
-                    HorizontalAlignment="Center"
-                    Content="Start" 
-                    Click="StartButton_Click"
-                    IsEnabled="{Binding IsStartTimerAllowed, Mode=OneWay}"/>
-                <Button 
-                    x:Name="StopButton"
-                    Grid.Column="1"
-                    HorizontalAlignment="Center"
-                    Content="Stop" 
-                    Click="StopButton_Click"
-                    IsEnabled="{Binding IsStopTimerAllowed, Mode=OneWay}"/>
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        Content="Create new project..." Click="Button_Click"/>
+                <TextBlock Grid.Row="2"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Text="{Binding DisplayTime, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                            x:Name="StartButton"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Content="Start" 
+                            Click="StartButton_Click"
+                            IsEnabled="{Binding IsStartTimerAllowed, Mode=OneWay}"/>
+                    <Button 
+                            x:Name="StopButton"
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            Content="Stop" 
+                            Click="StopButton_Click"
+                            IsEnabled="{Binding IsStopTimerAllowed, Mode=OneWay}"/>
+                </Grid>
             </Grid>
-        </Grid>
+        </materialDesign:Card>
     </DockPanel>
 
 

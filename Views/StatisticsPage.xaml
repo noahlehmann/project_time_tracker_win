@@ -4,40 +4,50 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjectTimeTrackerWPF.Views"
-      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="250" d:DesignWidth="200"
+      d:DesignHeight="250" d:DesignWidth="250"
       Title="StatisitcsPanel">
 
     <DockPanel>
-        <Grid>
-            <lvc:PieChart 
-                Name="Chart" 
-                Margin="20"
-                Series="{Binding SeriesCollection}"
-                InnerRadius="50">
-                <lvc:PieChart.DataTooltip>
-                    <lvc:DefaultTooltip BulletSize="20"/>
-                </lvc:PieChart.DataTooltip>
-            </lvc:PieChart>
-            <TextBlock 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="12" 
-                Margin="0,0,0,45"
-                Text="Today:"/>
-            <TextBlock 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="24" >
-                <Run Text="{Binding TotalHours}"/><Run Text="h"/>
-            </TextBlock>
-            <TextBlock 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="10" 
-                Margin="0,45,0,0"
-                Text="Well done!"/>
-        </Grid>
+        <materialDesign:Card
+            Margin="10"
+            Padding="10">
+            <Grid>
+                <lvc:PieChart 
+                    Name="Chart" 
+                    Series="{Binding SeriesCollection}"
+                    InnerRadius="50">
+                    <lvc:PieChart.DataTooltip>
+                        <lvc:DefaultTooltip BulletSize="20"/>
+                    </lvc:PieChart.DataTooltip>
+                </lvc:PieChart>
+                <Grid 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center" 
+                        FontSize="12" 
+                        Text="Today:"/>
+                    <TextBlock 
+                        Grid.Row="1"
+                        HorizontalAlignment="Center" 
+                        FontSize="24" >
+                        <Run Text="{Binding TotalHours}"/><Run Text="h"/>
+                    </TextBlock>
+                    <TextBlock 
+                        Grid.Row="2"
+                        HorizontalAlignment="Center" 
+                        FontSize="10" 
+                        Text="Well done!"/>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
     </DockPanel>
 </Page>

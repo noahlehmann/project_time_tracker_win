@@ -19,5 +19,10 @@ namespace ProjectTimeTrackerWPF.Service
 
             return projects.Count == 0 ? MockData.MockProjects.Projects : projects;
         }
+
+        public static void SaveProject(Project project)
+        {
+            //Do magic in DB
+        }
     }
 }

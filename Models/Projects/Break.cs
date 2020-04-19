@@ -11,10 +11,8 @@ namespace ProjectTimeTrackerWPF.Models.Projects
     /// </summary>
     public sealed class Break : Project
     {
-        /// <summary>
-        /// Property to store planned or expected break duration per day
-        /// </summary>
-        public double HoursPerDay { get; set; }
+        
+
 
     }
 }

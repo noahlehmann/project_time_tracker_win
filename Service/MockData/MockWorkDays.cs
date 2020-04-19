@@ -16,7 +16,7 @@ namespace ProjectTimeTrackerWPF.Service.MockData
             get
             {
                 {
-                    Project a = new PersonalOrganization()
+                    Project a = new Project()
                     {
                         Description = "Time spent on organizational tasks",
                         ProjectName = "Organizational",
@@ -28,13 +28,16 @@ namespace ProjectTimeTrackerWPF.Service.MockData
                         ProjectName = "Break",
                         Id = 2
                     };
-                    Project c = new ClientProject()
+                    Project c = new Project()
                     {
                         Description = "Project Financial analysis for client XYZ",
                         ProjectName = "Financial XYZ",
-                        Client = "XYZ",
-                        Supervisor = "Mr. Supervisor",
-                        ChargeCode = "12345678",
+                        Properties = new List<ProjectProperty>()
+                        {
+                            new ProjectProperty(){Key = "Client", Value = "XYZ"},
+                            new ProjectProperty(){Key = "Supervisor", Value = "Mr. Supervisor"},
+                            new ProjectProperty(){Key = "ChargeCode", Value = "12345678"},
+                        },
                         Id = 3
                     };
                     return new List<WorkDay>() {
