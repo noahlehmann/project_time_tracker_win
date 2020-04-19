@@ -1,4 +1,6 @@
-# Project Time Tracker Win ![icon](https://github.com/noahlehmann/project_time_tracker_win/blob/develop/timer.ico)
+<div align="center">![icon](https://github.com/noahlehmann/project_time_tracker_win/blob/develop/timer.ico "http://www.iconarchive.com/artist/vcferreira.html")</div>
+
+# Project Time Tracker Win 
 
 ## Setup
 
