@@ -1,4 +1,4 @@
-# Project Time Tracker Win
+# Project Time Tracker Win ![icon](https://github.com/noahlehmann/project_time_tracker_win/blob/develop/timer.ico)
 
 ## Setup
 
