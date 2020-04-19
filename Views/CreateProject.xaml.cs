@@ -37,10 +37,7 @@ namespace ProjectTimeTrackerWPF.Views
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
             ObservableCollection<ProjectProperty> props = ((CreateProjectViewModel)DataContext).Properties;
-            foreach(ProjectProperty p in props.ToList().FindAll((p) => p.Key == null || p.Key == string.Empty))
-            {
-                props.Remove(p);
-            }
+            ((CreateProjectViewModel)DataContext).SaveProject();
             _parent.NavigateToTimerPage();
         }
 

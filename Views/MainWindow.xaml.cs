@@ -1,4 +1,5 @@
-﻿using ProjectTimeTrackerWPF.ViewModels;
+﻿using ProjectTimeTrackerWPF.Service;
+using ProjectTimeTrackerWPF.ViewModels;
 using ProjectTimeTrackerWPF.Views;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,12 @@ namespace project_time_tracker_win
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             DataContext = new MainWindowViewModel();
             ContentFrame.Navigate(new MainContent());
+            Closing += Window_OnClose;
         }
 
-        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        private void Window_OnClose(object sender, EventArgs e)
         {
+            TimerDataService.EndWorkDay();
             Application.Current.Shutdown();
         }
 

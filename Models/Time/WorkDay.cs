@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectTimeTrackerWPF.Models.Time
 {
     public class WorkDay
     {
+
+        public static WorkDay StartingNow 
+        {
+            get => new WorkDay() { Start = DateTime.Now, ProjectTimes = new List<ProjectTime>() };
+        }
+
         /// <summary>
         /// Database IDentifier
         /// </summary>
